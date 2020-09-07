@@ -1,0 +1,51 @@
+import React, { useState } from 'react'; 
+import { Link } from 'react-router-dom';
+
+import { Container, MenuButtons, MobileContent, Browse, DropdownButton, DropdownContent, Economy, Github } from './styles';
+
+const Header: React.FC = () => {
+    const [ active, setActive ] = useState('closeNav');
+
+    const HandleMenu = () => {
+
+        active === 'openNav' ? setActive('closeNav') : setActive('openNav');
+    }
+
+    return (
+        <Container>
+            <p>The World</p>
+            <MobileContent onClick={HandleMenu}>
+                <div></div>
+                <div></div>
+                <div></div>
+            </MobileContent>
+            <MenuButtons id={active}>
+                <Browse>
+                    <DropdownButton>
+                        <i className="fas fa-search"></i>
+                        Pesquisas
+                        <i className="fas fa-caret-down"></i>
+                    </DropdownButton>
+                    <DropdownContent>
+                        <Link to="#">Regiões</Link>
+                        <Link to="#">Países</Link>
+                        <Link to="#">Lingua</Link>
+                        <Link to="#">Cidade</Link>
+                    </DropdownContent>
+                </Browse>
+
+                <Economy>
+                    <Link to="#">Economia</Link>
+                </Economy>
+
+                <Github>
+                    <Link to="https://github.com/arlindojos/twitter">
+                        GitHub <i className="fab fa-github"></i>
+                    </Link>
+                </Github>
+            </MenuButtons>
+        </Container>
+    )
+}
+
+export default Header; 
