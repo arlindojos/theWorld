@@ -13,7 +13,7 @@ const Header: React.FC = () => {
 
     return (
         <Container>
-            <p>The World</p>
+            <Link to="/">The World</Link>
             <MobileContent onClick={HandleMenu}>
                 <div></div>
                 <div></div>

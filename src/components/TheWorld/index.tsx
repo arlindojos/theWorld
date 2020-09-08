@@ -1,25 +1,14 @@
-import React, { useState, useEffect } from 'react'; 
+import React, { useState } from 'react'; 
 
 import { Container, SearchCountry } from './styles';
-import api from '../../services/api';
+import Searcher from '../Searcher';
 
 interface Props {
     MainId?: string;
 }
 
-const WhatWeDo: React.FC<Props> = ({MainId}) => {
+const TheWorld: React.FC<Props> = ({MainId}) => {
     const [ requestCountry, setRequestCountry ] = useState('');
-    const [ countries, setCountries ] = useState<object[]>([]);
-
-
-   useEffect(() => {
-        api.get(`/name/${requestCountry}`)
-        .then((response => setCountries(response.data)))
-        .catch((err) => console.log('Nenhum país com o nome especificado foi encontrado.'));
-
-   }, [ requestCountry]);
-
-   countries.map((country, index) => console.log(country.name))
 
     return (
         <>
@@ -33,12 +22,12 @@ const WhatWeDo: React.FC<Props> = ({MainId}) => {
                     </span>
                     <SearchCountry onChange={ e => { setRequestCountry(e.target.value) }} placeholder="Digite o nome do país"/>
                     <i className="fas fa-search"></i>
-
-                    
                 </div>
+
+                <Searcher requestCountry={ requestCountry } />
             </Container>
         </>
     )
 }
 
-export default WhatWeDo;
+export default TheWorld;

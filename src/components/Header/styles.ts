@@ -11,12 +11,13 @@ export const Container = styled.div`
 
     border-bottom: 0.1rem solid var(--outline-light);
 
-    > p {
+    > a {
         font-size: 2.2rem;
         margin-left: 5rem;
         color: var(--primary);
         font-family: 'Roboto', sans-serif;
         font-weight: bold;
+        text-decoration: none;
     }
 
     @media (max-width: 792px) {
