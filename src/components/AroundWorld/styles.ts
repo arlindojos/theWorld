@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const World = styled.div`
     position: relative;
+    display: inline-block;
 
     > span {
         position: absolute;

@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Container = styled.div`
     margin-top: 10rem;
 
-     > #open {
+     > #Mobile {
         display: none;
     }
 
@@ -11,7 +11,7 @@ export const Container = styled.div`
         max-width: 40%;
     }
 
-    > #close {
+    > #Desktop {
         max-width: 95%;
 
         > span {
@@ -39,12 +39,12 @@ export const Container = styled.div`
     @media (max-width: 792px){
         max-width: 95%;
 
-        > #close {
+        > #Desktop {
             display: none;
             width: auto;
         }
 
-        > #open {
+        > #Mobile {
             display: block;
             
             > span {
@@ -89,9 +89,5 @@ export const SearchCountry = styled.input`
         ~ i {
             color: var(--twitter);
         }
-    }
-
-    @media (max-width: 792px){
-    
     }
 `;

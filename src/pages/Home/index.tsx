@@ -13,14 +13,14 @@ const Home: React.FC = () => {
         <Container>
             <Header />
             <Wrapper>
-                <TheWorld MainId="close"/>
+                <TheWorld MainId="Desktop"/>
                 <World>
                     <span>
                         Conhecer o mundo nunca foi tão fácil
                     </span>
                     <img src={AroundWouldImg} alt="Around the World"/>
 
-                    <TheWorld MainId="open" />
+                    <TheWorld MainId="Mobile" />
                     <TryRegion>
                         <span>
                             Temos a lista de todos os países do mundo, estando divididos pelo seus continentes. Da uma olhada.

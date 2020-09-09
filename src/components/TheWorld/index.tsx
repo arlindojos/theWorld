@@ -12,7 +12,7 @@ const TheWorld: React.FC<Props> = ({MainId}) => {
 
     return (
         <>
-            <Container>
+            <Container id="theWorld">
                 <div id={MainId}>
                     <span>
                     Nesta Pagina você ira poder conhecer todas as regiões do mundo, países, linguas, Cidades assim como suas culturas.
