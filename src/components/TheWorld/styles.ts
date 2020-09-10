@@ -19,11 +19,6 @@ export const Container = styled.div`
             font-weight: bold;
         }
 
-        > span + span {
-            display: block;
-            margin: 5rem 0 0.6rem;
-        }
-
         > i {
             font-size: 18px;
             color: var(--gray);
@@ -69,6 +64,12 @@ export const Container = styled.div`
             }
         }
     }
+`;
+
+export const SearchBy = styled.span`
+    display: block;
+    margin-bottom: 1rem;
+    margin-right: 1.5rem;
 `;
 
 export const SearchCountry = styled.input`

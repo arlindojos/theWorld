@@ -6,7 +6,7 @@ import api from '../../services/api';
 import { AuthContext } from '../../contexts';
 
 interface Props {
-    requestCountry: string;
+    url: string;
 }
 
 const INICIAL_STATE = [
@@ -16,16 +16,16 @@ const INICIAL_STATE = [
     }
 ]
 
-const Searcher: React.FC<Props> = ({requestCountry}) => {
+const Searcher: React.FC<Props> = ({url}) => {
     const { newCountry } = useContext(AuthContext);
     const [ countries, setCountries ] = useState(INICIAL_STATE);
 
    useEffect(() => {
-        api.get(`/name/${requestCountry}`)
+        api.get(url)
         .then(response => setCountries(response.data))
         .catch((err) => console.log(err));
 
-   }, [ requestCountry]);
+   }, [url]);
 
 
     return (
@@ -33,7 +33,7 @@ const Searcher: React.FC<Props> = ({requestCountry}) => {
             {
                 countries.map((country, index) => {
                     if(index < 15)
-                    return <StaledCountry key={index}><Link onClick={e => { newCountry(country.name) }} to="/country">{country.name}</Link></StaledCountry>
+                    return <StaledCountry key={index}><Link onClick={e => { newCountry(`/name/${country.name}`) }} to="/country">{country.name}</Link></StaledCountry>
 
                     return '';
                 })

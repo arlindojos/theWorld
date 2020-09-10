@@ -18,7 +18,7 @@ interface CountryProps {
         timezones: string[],
         topLevelDomain: string[]
     };
-    newCountry(name: string): void;
+    newCountry(url: string): void;
 }
 
 const INICIAL_STATE = {
@@ -44,8 +44,8 @@ export const AuthContext =  createContext<CountryProps>({} as CountryProps);
 const AuthProvider: React.FC = ({children}) => {
   const [ country, setCountry ] = useLocalStorage('countries', INICIAL_STATE.country)
   
-  const newCountry = (name: string) => {
-    api.get(`/name/${name}`)
+  const newCountry = (url: string) => {
+    api.get(url)
     .then((response) => setCountry(response.data[0]))
     .catch((err) => console.log(err));
   }
