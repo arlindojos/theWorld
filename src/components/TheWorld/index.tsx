@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 
 import { Container, SearchCountry } from './styles';
 import Searcher from '../Searcher';
+import Toggle from '../Toggle';
 
 interface Props {
     MainId?: string;
@@ -15,8 +16,9 @@ const TheWorld: React.FC<Props> = ({MainId}) => {
             <Container id="theWorld">
                 <div id={MainId}>
                     <span>
-                    Nesta Pagina você ira poder conhecer todas as regiões do mundo, países, linguas, Cidades assim como suas culturas.
+                        Nesta Pagina você ira poder conhecer todas as regiões do mundo, países, linguas, Cidades assim como suas culturas.
                     </span>
+                    <Toggle />
                     <span>
                         Tem algum país em especial que gostaria de conhecer?
                     </span>
