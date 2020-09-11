@@ -5,5 +5,11 @@ export const Container =  styled.div`
 `;
 
 export const StaledCountry = styled.p`
-    font-size: 1.6rem;
+    font-size: 1.5rem;
+
+    > a {
+        text-decoration: none;
+        color: var(--primary);
+        font-weight: bold;
+    }
 `;

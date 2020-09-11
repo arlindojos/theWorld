@@ -19,7 +19,7 @@ const AroundWorld: React.FC = () => {
                     <span>
                         Temos a lista de todos os países do mundo, estando divididos pelo seus continentes. Da uma olhada.
                     </span>
-                        <Link to="#">Acessar</Link>
+                        <Link to="/regions">Acessar</Link>
                 </TryRegion>
             </World>
         </>

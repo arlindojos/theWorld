@@ -27,10 +27,10 @@ const Header: React.FC = () => {
                         <i className="fas fa-caret-down"></i>
                     </DropdownButton>
                     <DropdownContent>
-                        <Link to="#">Regiões</Link>
+                        <Link to="/regions">Regiões</Link>
                         <Link to="#theWorld">Países</Link>
                         <Link to="#">Lingua</Link>
-                        <Link to="#">Cidade</Link>
+                        <Link to="#theWorld">Cidade</Link>
                     </DropdownContent>
                 </Browse>
 
