@@ -1,10 +1,13 @@
 import styled from 'styled-components';
 
+interface Props {
+    isBlackMode: boolean;
+}
 
 export const Container = styled.div`
     #Desktop {
         width: 85%;
-        margin-top: 10rem;
+        margin-top: 2rem;
         display: block;
 
         > h1 {
@@ -31,17 +34,18 @@ export const Container = styled.div`
     }
 `;
 
-export const Description = styled.p`
+export const Description = styled.p<Props>`
     font-size: 1.6rem;
     font-weight: bold;
     line-height: 1.5;
+    
 
     > span {
         font-style: italic;
-        color: var(--primary);
+        color: ${props => props.isBlackMode ? 'var(--light)' : 'var(--primary)'};
     }
 `;
-export const More = styled.ul`
+export const More = styled.ul<Props>`
     margin-bottom: 7rem;
 
     > h1 {
@@ -51,7 +55,7 @@ export const More = styled.ul`
 
     > li span {
         font-style: italic;
-        color: var(--primary);
+        color: ${props => props.isBlackMode ? 'var(--light)' : 'var(--primary)'};
     }
     
     font-size: 1.5rem;
@@ -60,7 +64,14 @@ export const More = styled.ul`
     margin-left: 2rem;
     line-height: 1.6;
 `;
+export const Flag = styled.div``;
+export const Image = styled.img`
+    max-width: 20rem;
 
+    @media only screen and (max-width: 500px) {
+        max-width: 10rem;
+    }
+`;
 export const Borders = styled.li``;
 export const TimeZone = styled.li``;
 export const Domain = styled.li``;

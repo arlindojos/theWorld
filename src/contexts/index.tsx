@@ -17,6 +17,7 @@ interface CountryProps {
         borders: string[];
         timezones: string[];
         topLevelDomain: string[];
+        flag: string;
     };
     newCountry(url: string): void;
     blackMode: boolean;
@@ -32,12 +33,13 @@ const INICIAL_STATE = {
       languages: [
         {name: '',
         nativeName: ''
-      }
-    ],
-    capital: '',
-    borders: [],
-    timezones: [],
-    topLevelDomain: []
+        }
+      ],
+      capital: '',
+      flag: '',
+      borders: [],
+      timezones: [],
+      topLevelDomain: []
   }
 }
 

@@ -1,5 +1,5 @@
 import React, { useContext} from 'react';
-import { Container, More, Borders, TimeZone, Domain, Description } from './styles';
+import { Container, More, Borders, TimeZone, Domain, Description, Flag, Image } from './styles';
 
 import { AuthContext } from '../../contexts';
 import { MainNav } from '../AroundWorld/styles';
@@ -13,9 +13,9 @@ interface Props {
 const Countries: React.FC<Props> = ({MainId}) => {
     const { blackMode } = useContext(AuthContext);
     
-    const { name, altSpellings, region, population, languages, capital, borders, timezones, topLevelDomain } = useContext(AuthContext).country;
+    const { name,flag, altSpellings, region, population, languages, capital, borders, timezones, topLevelDomain } = useContext(AuthContext).country;
     if(!name)
-    return <Description>Carregando ...</Description>
+    return <Description isBlackMode={blackMode}>Carregando ...</Description>
 
 
 
@@ -28,19 +28,22 @@ const Countries: React.FC<Props> = ({MainId}) => {
     return (
         <Container>
             <div id={MainId}>
+                <Flag>
+                    <Image src={flag} />
+                </Flag>
                 <h1>{name}</h1>
-                <Description>
+                <Description isBlackMode={blackMode}>
                     <span>{name}</span> também conhecido como <span>{nickName}</span>, é um país da região 
                     da <span>{region}</span> com uma população estimada de <span>{population}</span>, a sua capital é <span>{capital}</span>. <br/>
                     Os habitantes de <span>{name}</span> tem como a sua primeira lingua <span>{language.name}/{language.nativeName}</span>.
                 </Description>
-                <More>
+                <More isBlackMode={blackMode}>
                     <h1>Mais sobre {name}:</h1>
                     <Borders>
                         Fronteiras com { borders.map((border) => <span>, {border}</span>) }
                     </Borders>
                     <TimeZone>
-                        Timezones {timezones.map((timezone) => <span>{timezone}</span>)}
+                        Fuso horário{timezones.map((timezone) => <span>{timezone}</span>)}
                     </TimeZone>
                     <Domain>
                         Domínios nativos {topLevelDomain.map((domain) => <span>{domain}</span>)}
