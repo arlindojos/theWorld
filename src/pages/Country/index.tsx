@@ -6,6 +6,7 @@ import AroundWorld from '../../components/AroundWorld';
 import Countries from '../../components/Countries';
 import { Container, Wrapper } from '../Home/styles';
 
+
 const Country: React.FC = () => {
     const { blackMode } = useContext(AuthContext);
 
