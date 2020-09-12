@@ -1,10 +1,11 @@
 # TheWorld
 
-TheWorld é um cliente REST que nos permite obter e visualizar as informações de propriedades dos países presentes na API (https://restcountries.eu) como nome, capital, região, sub-região, população, área, fuso horário, nome nativo e o link para visualizar a bandeira.
+TheWorld é um cliente REST que nos permite obter e visualizar as informações de propriedades dos países presentes na API (https://restcountries.eu) como nome, capital, região, sub-região, população, área, fuso horário, nome nativo e visualizar a bandeira.
+<br /> Podendo fazer a pesquisa usando nome do país, Cidade Capital, Lingua e a Região
 
 <p align="center"><b>Light Mode</b> / <b>Darkt Mode</b></p>
 <p align="center">
-  <img src="https://github.com/arlindojos/theWorld/blob/master/src/styles/images/light-mode.PNG" alt="in Light Mode" width="47%" />
+  <img src="https://github.com/arlindojos/theWorld/blob/master/src/styles/images/light-mode-country-info.PNG" alt="in Light Mode" width="47%" />
   <img src="https://github.com/arlindojos/theWorld/blob/master/src/styles/images/black-mode.PNG" alt="In Dark Mode" width="47%" />
 </p>
 
