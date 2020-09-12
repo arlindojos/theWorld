@@ -7,17 +7,17 @@ import Header from '../../components/Header';
 import { Container, Wrapper } from '../Home/styles';
 import { Regions, Europe, MainHeader, Africa, Americas, Asia, Oceania, Countries } from './styles';
 
-interface Region {
+interface RegionProps {
     name: string;
 }
 
 const Region: React.FC= () => {
     const { newCountry } = useContext(AuthContext);
-    const europe = useFetch<Region[]>('region/europe');
-    const africa = useFetch<Region[]>('region/africa');
-    const asia = useFetch<Region[]>('region/asia');
-    const americas = useFetch<Region[]>('region/americas');
-    const oceania = useFetch<Region[]>('region/oceania');
+    const europe = useFetch<RegionProps[]>('region/europe');
+    const africa = useFetch<RegionProps[]>('region/africa');
+    const asia = useFetch<RegionProps[]>('region/asia');
+    const americas = useFetch<RegionProps[]>('region/americas');
+    const oceania = useFetch<RegionProps[]>('region/oceania');
 
     return (
         <Container>

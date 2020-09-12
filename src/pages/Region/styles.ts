@@ -4,7 +4,7 @@ import styled from 'styled-components';
 export const Regions = styled.div`
     width: 100%;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
 
     @media only screen and (max-width: 792px) {
         grid-template-columns: 1fr 1fr;
@@ -15,6 +15,7 @@ export const Regions = styled.div`
         }
 
         @media only screen and (max-width: 500px) {
+            grid-template: auto;
             display: block;
             flex-shrink: 0;
 

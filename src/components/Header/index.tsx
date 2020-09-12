@@ -29,8 +29,8 @@ const Header: React.FC = () => {
                     <DropdownContent>
                         <Link to="/regions">Regiões</Link>
                         <Link to="#theWorld">Países</Link>
-                        <Link to="#">Lingua</Link>
-                        <Link to="#theWorld">Cidade</Link>
+                        <Link to="/languages">Linguas</Link>
+                        <Link to="#theWorld">Cidades</Link>
                     </DropdownContent>
                 </Browse>
 
@@ -39,9 +39,9 @@ const Header: React.FC = () => {
                 </Economy>
 
                 <Github>
-                    <Link to="https://github.com/arlindojos/twitter">
+                    <a href="https://github.com/arlindojos/theWorld">
                         GitHub <i className="fab fa-github"></i>
-                    </Link>
+                    </a>
                 </Github>
             </MenuButtons>
         </Container>
