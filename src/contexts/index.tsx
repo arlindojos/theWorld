@@ -19,6 +19,7 @@ interface CountryProps {
         topLevelDomain: string[];
         flag: string;
         area: string;
+        subregion: string;
     };
     newCountry(url: string): void;
     blackMode: boolean;
@@ -39,6 +40,7 @@ const INICIAL_STATE = {
       capital: '',
       flag: '',
       area: '',
+      subregion: '',
       borders: [],
       timezones: [],
       topLevelDomain: []

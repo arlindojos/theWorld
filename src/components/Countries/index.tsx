@@ -13,7 +13,7 @@ interface Props {
 const Countries: React.FC<Props> = ({MainId}) => {
     const { blackMode } = useContext(AuthContext);
     
-    const { name,flag, altSpellings, region, population, languages, capital, borders, timezones, topLevelDomain, area } = useContext(AuthContext).country;
+    const { name,flag, altSpellings, region, subregion, population, languages, capital, borders, timezones, topLevelDomain, area } = useContext(AuthContext).country;
     if(!name)
     return <Description isBlackMode={blackMode}>Carregando ...</Description>
 
@@ -43,10 +43,13 @@ const Countries: React.FC<Props> = ({MainId}) => {
                         Fronteiras com { borders.map((border) => <span>, {border}</span>) }
                     </Borders>
                     <Borders>
+                        Sub-região <span>{subregion}</span>
+                    </Borders>
+                    <Borders>
                         Uma area  <span>{area}</span> quilómetros quadrado
                     </Borders>
                     <TimeZone>
-                        Fuso horário{timezones.map((timezone) => <span>{timezone}</span>)}
+                        Fuso horário {timezones.map((timezone) => <span>{timezone}</span>)}
                     </TimeZone>
                     <Domain>
                         Domínios nativos {topLevelDomain.map((domain) => <span>{domain}</span>)}
@@ -54,7 +57,7 @@ const Countries: React.FC<Props> = ({MainId}) => {
                 </More>
                 <MainNav isBlackMode={blackMode}>
                     <span>
-                        As 13 Linguas mais faladas do munda e seus países
+                        As 13 Linguas mais faladas do mundo e seus países
                     </span>
                         <Link to="/languages">Acessar</Link>
                 </MainNav>
