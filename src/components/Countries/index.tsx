@@ -13,7 +13,7 @@ interface Props {
 const Countries: React.FC<Props> = ({MainId}) => {
     const { blackMode } = useContext(AuthContext);
     
-    const { name,flag, altSpellings, region, population, languages, capital, borders, timezones, topLevelDomain } = useContext(AuthContext).country;
+    const { name,flag, altSpellings, region, population, languages, capital, borders, timezones, topLevelDomain, area } = useContext(AuthContext).country;
     if(!name)
     return <Description isBlackMode={blackMode}>Carregando ...</Description>
 
@@ -41,6 +41,9 @@ const Countries: React.FC<Props> = ({MainId}) => {
                     <h1>Mais sobre {name}:</h1>
                     <Borders>
                         Fronteiras com { borders.map((border) => <span>, {border}</span>) }
+                    </Borders>
+                    <Borders>
+                        Uma area  <span>{area}</span> quilómetros quadrado
                     </Borders>
                     <TimeZone>
                         Fuso horário{timezones.map((timezone) => <span>{timezone}</span>)}
