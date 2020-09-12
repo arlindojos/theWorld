@@ -15,7 +15,8 @@ const Language: React.FC = () => {
     const [ language, setLanguage ] = useState('es');
     const [ languageTitle, setLanguageTitle ] = useState('Espanhol, Castelhiano')
 
-    const { newCountry } = useContext(AuthContext);
+    const { newCountry, blackMode } = useContext(AuthContext);
+
     const english = useFetch<LanguageProps[]>('lang/en');
     const portuguese = useFetch<LanguageProps[]>('lang/pt');
     const chinese =  useFetch<LanguageProps[]>('lang/zh');
@@ -31,11 +32,10 @@ const Language: React.FC = () => {
 
     const spanishAndUserRequestLanguage = useFetch<LanguageProps[]>(`lang/${language}`);
 
-    console.log(spanishAndUserRequestLanguage.data);
 
 
     return (
-        <Container>
+        <Container isBlackMode={blackMode}>
             <Header />
 
             <SearchLanguage>

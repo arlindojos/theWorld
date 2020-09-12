@@ -12,7 +12,7 @@ interface RegionProps {
 }
 
 const Region: React.FC= () => {
-    const { newCountry } = useContext(AuthContext);
+    const { newCountry, blackMode } = useContext(AuthContext);
     const europe = useFetch<RegionProps[]>('region/europe');
     const africa = useFetch<RegionProps[]>('region/africa');
     const asia = useFetch<RegionProps[]>('region/asia');
@@ -20,7 +20,7 @@ const Region: React.FC= () => {
     const oceania = useFetch<RegionProps[]>('region/oceania');
 
     return (
-        <Container>
+        <Container isBlackMode={blackMode}>
             <Header />
             <Wrapper>
                 <Regions>

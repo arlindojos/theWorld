@@ -1,5 +1,8 @@
 import styled from 'styled-components';
 
+interface Props {
+    isBlackMode: boolean;
+}
 
 export const Container = styled.div`
     width: 100%;
@@ -87,12 +90,13 @@ export const Browse = styled.li`
     }
 `;
 
-export const Economy = styled.li`
+export const Economy = styled.li<Props>`
     display: inline-block;
     margin: 0 2.8rem;
     
     > a {
         text-decoration: none;
+        color: ${props => props.isBlackMode ? 'var(--light)' : 'var(--dark)'};
 
         &:hover, &:active { 
             color: var(--primary);
@@ -122,12 +126,13 @@ export const Github = styled.li`
     }
 `;
 
-export const DropdownButton = styled.a`
+export const DropdownButton = styled.a<Props>`
     cursor: pointer;
     animation-name: BorderAnim;
     animation-fill-mode: forwards;
     animation-duration: 1s;
     animation-timing-function: ease-out;
+    color: ${props => props.isBlackMode ? 'var(--light)' : 'var(--dark)'};
     
     > i {
         margin-right: 0.6rem;
@@ -144,13 +149,13 @@ export const DropdownButton = styled.a`
     }
 `;
 
-export const DropdownContent = styled.div`
+export const DropdownContent = styled.div<Props>`
     display: none;
     position: absolute;
     left: 1.2rem;
     top: 2.4rem;
 
-    background-color: #f9f9f9;
+    background-color: ${props => props.isBlackMode ? 'var(--gray)' : '#f9f9f9'};
     box-shadow: 0px 8px 16px 0px var(--box-shadow);
     padding: 0.8rem 0;
     z-index: 1;
@@ -189,5 +194,46 @@ export const MobileContent = styled.div`
         &:hover {
             background: var(--gray);
         }
+    }
+`;
+
+export const BlackMode = styled.div`
+    position: absolute;
+    top: 4rem;
+    left: 83%;
+    z-index: 1;
+
+    > div label {
+        > input:checked + #styles {
+            background: var(--dark);
+            
+            &:before {
+                background: yellow;
+            }
+        }
+
+        > #styles {
+            background: #fff;
+
+            &:before {
+                background: var(--gray)
+            }
+        }
+    }
+
+    @media only screen and (min-width: 1015px) {
+        left: 90%;
+    }
+
+    @media only screen and (max-width: 605px) {
+        top: 6rem;
+        > div > span {
+            display: none;
+        }
+    }
+
+    > div label {
+        left: -2.3rem;
+        top: -1rem;
     }
 `;

@@ -14,11 +14,13 @@ interface CountryProps {
             nativeName: string;
         }[];
         capital: string;
-        borders: string[],
-        timezones: string[],
-        topLevelDomain: string[]
+        borders: string[];
+        timezones: string[];
+        topLevelDomain: string[];
     };
     newCountry(url: string): void;
+    blackMode: boolean;
+    setBlackMode: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 const INICIAL_STATE = {
@@ -42,7 +44,8 @@ const INICIAL_STATE = {
 export const AuthContext =  createContext<CountryProps>({} as CountryProps);
 
 const AuthProvider: React.FC = ({children}) => {
-  const [ country, setCountry ] = useLocalStorage('countries', INICIAL_STATE.country)
+  const [ country, setCountry ] = useLocalStorage('TheWorldCountries', INICIAL_STATE.country);
+  const [ blackMode, setBlackMode ] = useLocalStorage('TheWorldBlackMode', false);
   
   const newCountry = (url: string) => {
     api.get(url)
@@ -51,7 +54,7 @@ const AuthProvider: React.FC = ({children}) => {
   }
 
   return (
-    <AuthContext.Provider value={{country, newCountry}}>
+    <AuthContext.Provider value={{ country, newCountry, blackMode, setBlackMode}}>
       {children}
     </AuthContext.Provider>
   )

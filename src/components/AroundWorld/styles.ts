@@ -1,5 +1,9 @@
 import styled from 'styled-components';
 
+interface Props {
+    isBlackMode: boolean;
+}
+
 export const World = styled.div`
     position: relative;
     display: inline-block;
@@ -18,10 +22,11 @@ export const World = styled.div`
     }
 `;
 
-export const TryRegion = styled.div`
+export const MainNav = styled.div<Props>`
     margin-top: 4rem;
     font-size: 1.6rem;
     font-weight: bold;
+    
 
     >  a {
         display: block;
@@ -32,6 +37,7 @@ export const TryRegion = styled.div`
         text-decoration: none;
         width: 30%;
         height: 3.9rem;
+        border: ${props => props.isBlackMode ? '1px solid var(--primary)' : 'none'};
         border-radius: 1rem;
         
         margin-top: 0.6rem;

@@ -42,6 +42,8 @@ export const Description = styled.p`
     }
 `;
 export const More = styled.ul`
+    margin-bottom: 7rem;
+
     > h1 {
         font-size: 1.8rem;
         line-height: 1.6

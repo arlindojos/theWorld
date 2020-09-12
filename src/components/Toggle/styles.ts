@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 export const Toggle = styled.div`
     display: flex;
+    position: unset;
     flex-direction: column;
     align-items: flex-end;
     margin-top: 2rem;
@@ -32,7 +33,7 @@ export const Switch = styled.label`
     left: -5rem;
     width: 6.6rem;
     height: 3.6rem;
-    margin-bottom: 0.3rem
+    margin-bottom: 0.3rem;
 `;
 
 export const Checkbox = styled.input`

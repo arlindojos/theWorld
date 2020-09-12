@@ -1,7 +1,9 @@
-import React, { useContext } from 'react';
+import React, { useContext} from 'react';
 import { Container, More, Borders, TimeZone, Domain, Description } from './styles';
 
 import { AuthContext } from '../../contexts';
+import { MainNav } from '../AroundWorld/styles';
+import { Link } from 'react-router-dom';
 
 
 interface Props {
@@ -9,9 +11,12 @@ interface Props {
 }
 
 const Countries: React.FC<Props> = ({MainId}) => {
+    const { blackMode } = useContext(AuthContext);
+    
     const { name, altSpellings, region, population, languages, capital, borders, timezones, topLevelDomain } = useContext(AuthContext).country;
     if(!name)
     return <Description>Carregando ...</Description>
+
 
 
     const indexNick = altSpellings.length - 1;
@@ -32,7 +37,7 @@ const Countries: React.FC<Props> = ({MainId}) => {
                 <More>
                     <h1>Mais sobre {name}:</h1>
                     <Borders>
-                        nteiras com { borders.map((border) => <span>, {border}</span>) }
+                        Fronteiras com { borders.map((border) => <span>, {border}</span>) }
                     </Borders>
                     <TimeZone>
                         Timezones {timezones.map((timezone) => <span>{timezone}</span>)}
@@ -41,6 +46,12 @@ const Countries: React.FC<Props> = ({MainId}) => {
                         Domínios nativos {topLevelDomain.map((domain) => <span>{domain}</span>)}
                     </Domain>
                 </More>
+                <MainNav isBlackMode={blackMode}>
+                    <span>
+                        As 13 Linguas mais faladas do munda e seus países
+                    </span>
+                        <Link to="/languages">Acessar</Link>
+                </MainNav>
             </div>
         </Container>
     )

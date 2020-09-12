@@ -1,12 +1,16 @@
 import { createGlobalStyle } from "styled-components";
 
-export default createGlobalStyle`
+interface Props {
+    isBlackMode: boolean;
+}
+
+export default createGlobalStyle<Props>`
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 
-    color: var(--dark);
+    color: ${props => props.isBlackMode ? 'var(--light)' : 'var(--dark)'};
 }
 
 html, body, #root {
@@ -25,6 +29,10 @@ html, body, #root {
 
 html {
     background: var(--light);
+}
+
+#container {
+    background: var(--dark);
 }
 
 :root {

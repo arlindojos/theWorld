@@ -1,16 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Routes from './routes';
 
 import GlobalStyle from './styles/globalStyles';
-import AuthProvider from './contexts';
+import { AuthContext } from './contexts';
 
 function App() {
+  const { blackMode } = useContext(AuthContext);
   return (
       <>  
-        <AuthProvider>
-          <Routes />
-        </AuthProvider>
-        <GlobalStyle />
+        <Routes />
+        <GlobalStyle isBlackMode={blackMode} />
       </>
   );
 }

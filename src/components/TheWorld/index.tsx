@@ -1,19 +1,23 @@
-import React, { useState, useEffect } from 'react'; 
+import React, { useState, useEffect, useContext } from 'react'; 
 
 import { Container, SearchCountry,SearchBy } from './styles';
 import { Toggle, Switch, Checkbox, Slider, Choice } from '../Toggle/styles';
 import Searcher from '../Searcher';
+import { AuthContext } from '../../contexts';
 
 interface Props {
     MainId?: string;
 }
 
 const TheWorld: React.FC<Props> = ({MainId}) => {
+    const { blackMode } = useContext(AuthContext);
     const [ requestCountry, setRequestCountry ] = useState('');
 
     const [ placeholder, setPlaceholder ] = useState('');
     const [ legend, setLegend ] = useState('');
-    const [ legendStyles, setLegendStyles] = useState({color: ''});
+    const [ legendStyles, setLegendStyles] = useState(
+         blackMode ? {color: 'var(--light)'} : {color: 'var(--dark)'}
+        );
     const [ checked, setChecked ] = useState(true);
     const [ url, setUrl ] = useState(`/name/${requestCountry}`);
 
@@ -22,15 +26,16 @@ const TheWorld: React.FC<Props> = ({MainId}) => {
         if(checked === true) {
             setPlaceholder('Digite o nome do país')
             setLegend('Faça a sua pesquisa usando o nome do país')
-            setLegendStyles({color: 'var(--dark)'})
             setUrl(`/name/${requestCountry}`)
+            
+            blackMode ? setLegendStyles({color: 'var(--light)'}) : setLegendStyles({color: 'var(--dark)'})
         } else {
             setPlaceholder('Digite o nome da cidade capital')
             setLegend('Faça a sua pesquisa usando a cidade capital')
             setLegendStyles({color: 'var(--primary)'})
             setUrl(`/capital/${requestCountry}`)
         }
-    }, [checked, requestCountry])
+    }, [checked, requestCountry, blackMode])
 
 
     return (
