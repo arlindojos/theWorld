@@ -37,3 +37,6 @@ Primeiro, clone o repositório para seu ambiente:
 
 No seu terminal, entra no repositorio clonado e insira o comando: 
 <br />`npm run start`  ou `yarn start` se tiver yarn instalado
+
+Provavelmente precisara da extensão "vscode-styled-components" intalada no seu vscode, se estiver usando vscode para que o editor possa enteder o CSS no arquivo ts
+
