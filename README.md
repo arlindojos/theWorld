@@ -20,7 +20,7 @@ Construido com [React.js](https://pt-br.reactjs.org/) e [Typescript](https://www
  
  - [Axios](https://github.com/axios/axios) Usado junto com SWR para fazer as requisições na API
  
- - [React Context API](https://github.com/styled-components/styled-components) Para prover em toda a aplicação dados vindo da API e acções importante do useario dentro da aplicação
+ - [React Context API](https://reactjs.org/docs/context.html) Para prover em toda a aplicação dados vindo da API e acções importante do useario dentro da aplicação
  
  - [Styled-componets](https://github.com/styled-components/styled-components) Uma feramenta que nos permite usar CSS no arquivo Javascript ou Typescript
   
