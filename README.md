@@ -22,3 +22,16 @@ Construido com [React.js](https://pt-br.reactjs.org/) e [Typescript](https://www
  
  - [Styled-componets](https://github.com/styled-components/styled-components) Uma feramenta que nos permite usar CSS no arquivo Javascript ou Typescript
   
+ ## ⚙ Instalação e Start
+A aplicação já existe hopedada na vercel pelo dominio [theworld.vercel.app](https://theworld.vercel.app/).
+<br />Para a intalação na sua maquina, primeiro certifique-se de que tenha instalado Node.js, antes de seguir os passos abaixo.
+
+### Clonagem
+Primeiro, clone o repositório para seu ambiente:
+
+```bash
+> git clone https://github.com/arlindojos/theWorld.git
+```
+
+No seu terminal, entra no repositorio clonado e insira o comando: 
+<br />`npm run start`  ou `yarn start` se tiver yarn instalado
