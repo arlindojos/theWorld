@@ -43,7 +43,7 @@ const TheWorld: React.FC<Props> = ({MainId}) => {
             <Container id="theWorld">
                 <div id={MainId}>
                     <span>
-                        Nesta Pagina você ira poder conhecer todas as regiões do mundo, países, linguas, Cidades assim como suas culturas.
+                        Nesta Pagina você ira poder conhecer todas as regiões do mundo, países, linguas, Cidades e ainda fazer Download das informações no formato CSV.
                     </span>
 
                     <Toggle>

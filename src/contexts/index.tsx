@@ -20,6 +20,7 @@ interface CountryProps {
         flag: string;
         area: string;
         subregion: string;
+        nativeName: string;
     };
     newCountry(url: string): void;
     blackMode: boolean;
@@ -29,6 +30,7 @@ interface CountryProps {
 const INICIAL_STATE = {
     country: {
       name: '',
+      nativeName: '',
       altSpellings: [],
       region: '',
       population: '',

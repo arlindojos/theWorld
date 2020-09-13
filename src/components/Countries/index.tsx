@@ -1,5 +1,5 @@
 import React, { useContext} from 'react';
-import { Container, More, Borders, TimeZone, Domain, Description, Flag, Image } from './styles';
+import { Container, More, Borders, TimeZone, Domain, Description, Flag, Image,CSVDownload, Button } from './styles';
 
 import { AuthContext } from '../../contexts';
 import { MainNav } from '../AroundWorld/styles';
@@ -11,12 +11,11 @@ interface Props {
 }
 
 const Countries: React.FC<Props> = ({MainId}) => {
-    const { blackMode } = useContext(AuthContext);
+    const { blackMode, country } = useContext(AuthContext);
     
-    const { name,flag, altSpellings, region, subregion, population, languages, capital, borders, timezones, topLevelDomain, area } = useContext(AuthContext).country;
+    const { name, nativeName, flag, altSpellings, region, subregion, population, languages, capital, borders, timezones, topLevelDomain, area } = country;
     if(!name)
     return <Description isBlackMode={blackMode}>Carregando ...</Description>
-
 
 
     const indexNick = altSpellings.length - 1;
@@ -24,6 +23,37 @@ const Countries: React.FC<Props> = ({MainId}) => {
 
     const indexLanguage = languages.length - 1;
     const language = languages[indexLanguage];
+
+    const csvData = [ 
+        ['Nome', name],
+        ['Nome nativo', nativeName],
+        ['Regiao', region],
+        ['Sub-regiao', subregion],
+        ['Area', area],
+        ['Populacao', population],
+        ['Capital', capital],
+        ['Lingua', language.name],
+        ['Fronteiras', borders.map((border) => border)],
+        ['Fuso horario', timezones.map((timezone) => timezone)],
+        ['Dominios nativos', topLevelDomain.map((domain) => domain)],
+        ['Link para visualizar bandeira', flag],
+    ]
+
+    function csv() {
+        var value = 'Name,Title\n';
+        csvData.forEach(function(row) {
+                value += row.join(' : ');
+                value += "\n";
+        });
+    
+        console.log(value);
+        var hiddenElement = document.createElement('a');
+        hiddenElement.href = 'data:text/csv;charset=utf-8,' + encodeURI(value);
+        hiddenElement.target = '_blank';
+        hiddenElement.download = 'theworld.country.csv';
+        hiddenElement.click();
+    }
+    
 
     return (
         <Container>
@@ -54,6 +84,11 @@ const Countries: React.FC<Props> = ({MainId}) => {
                     <Domain>
                         Domínios nativos {topLevelDomain.map((domain) => <span>{domain}</span>)}
                     </Domain>
+                    <CSVDownload>
+                        <Button onClick={csv}>
+                            Fazer Download
+                        </Button>
+                    </CSVDownload>
                 </More>
                 <MainNav isBlackMode={blackMode}>
                     <span>

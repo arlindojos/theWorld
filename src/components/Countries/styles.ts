@@ -46,7 +46,7 @@ export const Description = styled.p<Props>`
     }
 `;
 export const More = styled.ul<Props>`
-    margin-bottom: 7rem;
+    margin-bottom: 4rem;
 
     > h1 {
         font-size: 1.8rem;
@@ -72,6 +72,30 @@ export const Image = styled.img`
         max-width: 10rem;
     }
 `;
+
+export const CSVDownload = styled.div`
+    text-align: right;
+    margin-right: 6rem;
+`;
+
+export const Button = styled.button`
+    color: #D95284;
+    background: #03588C;
+    font-size: 1.6rem;
+    font-weight: bold;
+    border: none;
+    
+    padding: 1.1rem 1.3rem;
+    border-radius: .3rem;
+
+    cursor: pointer;
+
+    &:hover, &:active {
+        opacity: .8;
+    }
+`;
+
+
 export const Borders = styled.li``;
 export const TimeZone = styled.li``;
 export const Domain = styled.li``;
