@@ -3,7 +3,7 @@
 ### visite-nos [TheWorld](https://theworld.vercel.app/)
 
 TheWorld é um cliente REST que nos permite visualizar e fazer o download das informações de propriedades dos países presentes na API (https://restcountries.eu) como nome, capital, região, sub-região, população, área, fuso horário, nome nativo e a bandeira.
-<br /> Podendo fazer a pesquisa usando nome do país, Cidade Capital, Lingua e a Região
+<br /> Podendo fazer a pesquisa usando nome do país, Cidade Capital, Lingua e a Região. A aplicação pode ser visualisada no Modo de luz ou no Modo escuro.
 
 <p align="center"><b>Light Mode</b> / <b>Darkt Mode</b></p>
 <p align="center">
